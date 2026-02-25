@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.sparkdiagnostics642.com/sitemap.xml
