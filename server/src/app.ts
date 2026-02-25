@@ -22,6 +22,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Health check endpoint to keep the server awake
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
+
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/admin", adminRoutes);
