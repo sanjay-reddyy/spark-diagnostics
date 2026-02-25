@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { getBotReply } from "../../services/chatbotService";
 import { motion, AnimatePresence } from "framer-motion";
 import avatar from "../../assets/images/doctor/doctor-profile.jpg";

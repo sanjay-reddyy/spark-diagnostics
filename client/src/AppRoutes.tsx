@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Loader2 } from "lucide-react";
 import MainLayout from "./components/layout/MainLayout";
 
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";

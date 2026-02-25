@@ -1,20 +1,27 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ChangeEvent } from "react";
 import { createPortal } from "react-dom";
 import { api } from "../../services/api";
 import { Loader2, X } from "lucide-react";
 
-export default function BookingModal({ open, onClose, service, details }) {
+interface BookingModalProps {
+  open: boolean;
+  onClose: () => void;
+  service: string;
+  details?: string | string[];
+}
+
+export default function BookingModal({ open, onClose, service, details }: BookingModalProps) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string | null>>({});
   const [loading, setLoading] = useState(false);
 
 const scrollYRef = useRef(0);
-const modalRef = useRef(null);
+const modalRef = useRef<HTMLDivElement>(null);
 
  useEffect(() => {
   if (open) {
@@ -49,7 +56,7 @@ const modalRef = useRef(null);
 
   if (!open) return null;
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
     // Clear error when user starts typing
@@ -59,7 +66,7 @@ const modalRef = useRef(null);
   };
 
   const handleSubmit = async () => {
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
     if (!form.name.trim()) newErrors.name = "Name is required.";
     if (!form.phone.trim()) newErrors.phone = "Phone number is required.";
     if (!form.email.trim()) {

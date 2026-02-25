@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import AdminLayout from "../../components/admin/AdminLayout";
-import { Phone, Mail, MessageSquare, Calendar, X } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 
 export default function Dashboard() {
@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [appointments, setAppointments] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedItem, setSelectedItem] = useState(null);
+  // const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
   const fetchAppointments = async () => {

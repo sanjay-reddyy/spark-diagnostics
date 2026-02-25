@@ -45,7 +45,7 @@ const packages = [
 export default function HealthPackages() {
   const [open, setOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
-  const [selectedTests, setSelectedTests] = useState([]);
+const [selectedTests, setSelectedTests] = useState<string[]>([]);
 
   return (
     <section className="relative py-16 md:py-24">

@@ -7,14 +7,7 @@ import microImg from "../assets/images/ai/microbiology.jpg";
 import histoImg from "../assets/images/ai/histopathology.jpg";
 import immunoImg from "../assets/images/ai/immunology.jpg";
 import preventiveImg from "../assets/images/ai/preventive.jpg";
-import {
-  Microscope,
-  TestTube,
-  ShieldCheck,
-  Activity,
-  FlaskConical,
-  HeartPulse,
-} from "lucide-react";
+
 
 export default function Services() {
   const services = [
