@@ -7,7 +7,17 @@ import adminRoutes from "./routes/admin.routes";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local dev
+      "https://spark-diagnostics-backend.onrender.com", // production frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use("/api/appointments", appointmentRoutes);
