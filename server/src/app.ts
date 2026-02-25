@@ -16,6 +16,12 @@ app.use(
 
 app.use(express.json());
 
+// Debug logging to see requests in Render logs
+app.use((req, res, next) => {
+  console.log(`[Request] ${req.method} ${req.path}`);
+  next();
+});
+
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/admin", adminRoutes);
