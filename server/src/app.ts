@@ -9,12 +9,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173", // local dev
-      "https://spark-diagnostics-backend.onrender.com", // production frontend
-    ],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
   })
 );
 
